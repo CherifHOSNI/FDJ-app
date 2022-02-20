@@ -1,0 +1,21 @@
+<header class="header">
+    <div class="wrapper">
+        <div class="logo" (click)="goBack()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+            <a>Back</a>
+        </div>
+        <div class="header-text">
+            <h1 *ngIf="selectedTeam">{{selectedTeam.name}}</h1>
+        </div>
+    </div>
+</header>
+<div class="row" *ngFor="let player of players">
+    <img src={{player.thumbnail}}>
+    <div class="information">
+        <h3>{{player.name}}</h3>
+
+        <p>{{player.position}}</p>
+        <p>birthDate:{{player.born | date: 'yyyy/MM/dd'}}</p>
+        <p>price:{{ player.signin.amount.$numberInt | currency: 'EUR' }}</p>
+    </div>
+</div>

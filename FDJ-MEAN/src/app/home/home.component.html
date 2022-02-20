@@ -1,0 +1,13 @@
+<div class="headerSearch">
+    <input type="text" name="search-box" class="search-box" (keyup)="sendData($event)" [ngModel]="selectLeagueName">
+    <a *ngIf="leagueNameSelected" (click)="reset()">Cancel</a>
+</div>
+<section class="search-results">
+    <p *ngIf="leagues.length<1 && hasQuery">
+        Sorry. Nothing Found
+    </p>
+    <ng-template *ngIf="!leagueNameSelected" ngFor let-league [ngForOf]="leagues" let-i="index">
+        <p (click)="recupTeams(league)">{{league.name}}</p>
+    </ng-template>
+</section>
+<app-teams *ngIf="teams.length>0" [teamsList]="teams"></app-teams>
