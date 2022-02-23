@@ -1,12 +1,15 @@
-<div class="headerSearch">
+<div class="headerSearch" data-test="header">
   <input
     type="text"
     name="search-box"
     class="search-box"
     (keyup)="sendData($event)"
     [ngModel]="selectLeagueName"
+    data-test="input-search"
   />
-  <a *ngIf="leagueNameSelected" (click)="reset()">Cancel</a>
+  <a *ngIf="leagueNameSelected" data-test="suggestion" (click)="reset()"
+    >Cancel</a
+  >
 </div>
 <section class="search-results">
   <p *ngIf="leagues.length < 1 && hasQuery">Sorry. Nothing Found</p>
@@ -16,6 +19,7 @@
     let-league
     [ngForOf]="leagues"
     let-i="index"
+    data-test="search-results"
   >
     <p (click)="recupTeams(league)">{{ league.name }}</p>
   </ng-template>

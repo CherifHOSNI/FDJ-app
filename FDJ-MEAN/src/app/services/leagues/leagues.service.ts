@@ -19,8 +19,8 @@ export class LeaguesService {
       )
       .pipe(map((data) => data.payload));
   }
-  setSelectedLeague(team: League) {
-    this.selectedLeague = team;
+  setSelectedLeague(league: League) {
+    this.selectedLeague = league;
   }
   getSelectedLeague(): League {
     return this.selectedLeague;
