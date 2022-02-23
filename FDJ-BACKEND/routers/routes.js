@@ -1,0 +1,10 @@
+var express = require("express");
+const leagueController = require("../controllers/league-controller");
+const playerController = require("../controllers/player-controller");
+const teamController = require("../controllers/team-controllers");
+var router = express.Router();
+router.post("/getLeagues", leagueController.getLeaguesList);
+router.post("/getTeams", teamController.getTeamsByIDs);
+router.post("/getTeamPlayersIDs", teamController.getPlayersListInTeamID);
+router.post("/getPlayers", playerController.getPlayerByID);
+module.exports = router;

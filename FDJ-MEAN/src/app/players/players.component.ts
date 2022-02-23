@@ -9,17 +9,20 @@ import { Team } from '../shared/interfaces/team';
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styleUrls: ['./players.component.css']
+  styleUrls: ['./players.component.css'],
 })
 export class PlayersComponent implements OnInit, AfterViewInit {
-
   teamId: any;
   playersIdList: string[] = [];
   players: Player[] = [];
   selectedTeam: Team;
 
-
-  constructor(private route: ActivatedRoute, private router: Router, private playersService: PlayersService, private teamsService: TeamsService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private playersService: PlayersService,
+    private teamsService: TeamsService
+  ) {
     this.selectedTeam = this.teamsService.getSelectedTeam();
     if (!this.selectedTeam) {
       this.router.navigate(['/Home']);
@@ -27,18 +30,22 @@ export class PlayersComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.teamId = params.get('_id')
+    this.route.paramMap.subscribe((params) => {
+      this.teamId = params.get('_id');
     });
   }
   ngAfterViewInit(): void {
-    this.playersService.searchPlayersByTeamID(this.teamId).subscribe(results => {
-      this.playersIdList = results;
+    this.playersService
+      .searchPlayersByTeamID(this.teamId)
+      .subscribe((results) => {
+        this.playersIdList = results;
 
-      this.playersService.searchPlayers(this.playersIdList).subscribe(results => {
-        this.players = results;
+        this.playersService
+          .searchPlayers(this.playersIdList)
+          .subscribe((results) => {
+            this.players = results;
+          });
       });
-    });
   }
   goBack() {
     this.router.navigate(['Home']);
