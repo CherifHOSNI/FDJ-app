@@ -6,15 +6,12 @@ import { TeamsService } from '../services/teams/teams.service';
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.css']
+  styleUrls: ['./teams.component.css'],
 })
 export class TeamsComponent {
-
   @Input() teamsList: Team[] = [];
 
-  constructor(private router: Router, private teamsService: TeamsService) { }
-
-
+  constructor(private router: Router, private teamsService: TeamsService) {}
 
   setSelectTedTeam(team: Team) {
     this.teamsService.setSelectedTeam(team);

@@ -10,9 +10,8 @@ describe('TeamsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientTestingModule],
-      declarations: [TeamsComponent]
-    })
-      .compileComponents();
+      declarations: [TeamsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

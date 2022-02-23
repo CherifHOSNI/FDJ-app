@@ -6,21 +6,21 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: 'Home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'team/:_id',
-    loadChildren: () => import('./players/players.module')
-      .then(mod => mod.PlayersModule)
+    loadChildren: () =>
+      import('./players/players.module').then((mod) => mod.PlayersModule),
   },
   {
     path: '**',
-    redirectTo: 'Home'
-  }
+    redirectTo: 'Home',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

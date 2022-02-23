@@ -4,20 +4,10 @@ import { PlayersComponent } from './players.component';
 import { PlayersRoutingModule } from './players-routing.module';
 import { MaterialModule } from '../shared/modules/material/material.module';
 
-
 @NgModule({
-    imports: [
-        CommonModule,
-        PlayersRoutingModule,
-        MaterialModule
-    ],
-    exports: [
-        PlayersComponent
-    ],
-    declarations: [
-        PlayersComponent
-    ],
-    providers: [
-    ],
+  imports: [CommonModule, PlayersRoutingModule, MaterialModule],
+  exports: [PlayersComponent],
+  declarations: [PlayersComponent],
+  providers: [],
 })
-export class PlayersModule { }
+export class PlayersModule {}

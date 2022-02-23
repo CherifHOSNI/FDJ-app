@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="logo" *ngFor="let team of teamsList">
-        <a [routerLink]="['team/34']" (click)="setSelectTedTeam(team)">
-            <img src={{team.thumbnail}}>
-        </a>
-    </div>
+  <div class="logo" *ngFor="let team of teamsList">
+    <a [routerLink]="['team/34']" (click)="setSelectTedTeam(team)">
+      <img src="{{ team.thumbnail }}" />
+    </a>
+  </div>
 </div>

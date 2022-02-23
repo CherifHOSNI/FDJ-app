@@ -8,7 +8,7 @@ describe('LeaguesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [LeaguesService]
+      providers: [LeaguesService],
     });
     service = TestBed.inject(LeaguesService);
   });

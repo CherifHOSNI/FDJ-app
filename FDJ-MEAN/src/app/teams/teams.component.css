@@ -1,19 +1,18 @@
-.container, a {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  a {
-    width: 100%;
-  }
-  .logo{
-    width: 150px;
-    justify-content: center;
-    padding: 20px 20px 20px 20px;
-
+.container,
+a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-img{
-  width: 100%;  
-  
+
+a {
+  width: 100%;
+}
+.logo {
+  width: 150px;
+  justify-content: center;
+  padding: 20px 20px 20px 20px;
+}
+img {
+  width: 100%;
 }

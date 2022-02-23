@@ -2,7 +2,7 @@
   border: 2px solid black;
   width: 100%;
   position: relative;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 .wrapper {
@@ -15,8 +15,8 @@
   display: flex;
   cursor: pointer;
 }
-a{
-  color: #1087FA;
+a {
+  color: #1087fa;
 }
 .logo img {
   width: 80px;
@@ -28,23 +28,23 @@ a{
   width: 100%;
   top: 50%;
 }
-.row{
+.row {
   display: flex;
   flex-wrap: nowrap;
   width: 100px;
   padding: 20px 20px 20px 20px;
-  background-color: #EFEFF4;
+  background-color: #efeff4;
   width: 100%;
   margin-bottom: 10px;
 }
-img{
-width: 100px;  
-
+img {
+  width: 100px;
 }
-h3, p {
+h3,
+p {
   margin-top: 5px;
   margin-left: 10px;
 }
-p{
+p {
   color: gray;
 }

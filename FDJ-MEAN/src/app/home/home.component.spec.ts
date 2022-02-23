@@ -13,9 +13,8 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
 
-      declarations: [HomeComponent]
-    })
-      .compileComponents();
+      declarations: [HomeComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -29,18 +28,22 @@ describe('HomeComponent', () => {
   });
 
   it('reset values', () => {
-    component.reset()
-    expect(component.selectLeagueName).toEqual("");
+    component.reset();
+    expect(component.selectLeagueName).toEqual('');
     expect(component.leagueNameSelected).toBe(false);
   });
 
   it('should recup team', () => {
     let league: League = {
-      _id: "5d2cdcf7da07b95bb8f16ed1",
-      name: "English Premier League",
-      sport: "soccer",
-      teams: ["5d2d01fdda07b95bb8f16f0a", "5d2d02d7da07b95bb8f16f2a", "5d2d8f60da07b95bb8f17170"]
-    }
+      _id: '5d2cdcf7da07b95bb8f16ed1',
+      name: 'English Premier League',
+      sport: 'soccer',
+      teams: [
+        '5d2d01fdda07b95bb8f16f0a',
+        '5d2d02d7da07b95bb8f16f2a',
+        '5d2d8f60da07b95bb8f17170',
+      ],
+    };
 
     component.recupTeams(league);
     expect(component.teams.length).toBe(0);
@@ -49,10 +52,10 @@ describe('HomeComponent', () => {
   it('should send data', () => {
     let event = {
       target: {
-        value: "English Premier League"
-      }
-    }
+        value: 'English Premier League',
+      },
+    };
     component.sendData(event);
-    expect(component.hasQuery).toBe(false)
+    expect(component.hasQuery).toBe(false);
   });
 });
