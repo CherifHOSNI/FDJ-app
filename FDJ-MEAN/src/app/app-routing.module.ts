@@ -9,6 +9,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    /** players component is lazy loaded */
     path: 'team/:_id',
     loadChildren: () =>
       import('./players/players.module').then((mod) => mod.PlayersModule),
